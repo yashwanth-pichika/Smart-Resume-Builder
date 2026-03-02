@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Resume Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="brand">
+          <div class="brand-mark">SR</div>
+          <div class="brand-text">
+            <h1>Smart Resume Builder</h1>
+            <p>Auto-generate polished resumes.</p>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button id="btn-clear" class="ghost-button" type="button">
+            Clear All
+          </button>
+          <button id="btn-download" class="primary-button" type="button">
+            Download / Print PDF
+          </button>
+        </div>
+      </header>
+
+      <main class="app-main">
+        <section class="panel panel-input">
+          <div class="panel-header">
+            <h2>1. Your Information</h2>
+            <p>Fill in the details below. Preview updates in real time.</p>
+          </div>
+
+          <form id="resume-form" class="form-grid">
+            <div class="form-group full">
+              <label for="template">Template style</label>
+              <select id="template" name="template">
+                <option value="classic">Classic Professional</option>
+                <option value="modern">Modern Accent</option>
+                <option value="minimal">Minimal Clean</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="fullName">Full name</label>
+              <input id="fullName" name="fullName" type="text" placeholder="Alex Johnson" />
+            </div>
+
+            <div class="form-group">
+              <label for="headline">Headline / title</label>
+              <input
+                id="headline"
+                name="headline"
+                type="text"
+                placeholder="Senior Frontend Engineer"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="example@gmail.com" />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="+91 999 999 9999" />
+            </div>
+
+            <div class="form-group">
+              <label for="location">Location</label>
+              <input id="location" name="location" type="text" placeholder="Guntur" />
+            </div>
+
+            <div class="form-group">
+              <label for="links">Links</label>
+              <input
+                id="links"
+                name="links"
+                type="text"
+                placeholder="LinkedIn, portfolio, GitHub (comma-separated)"
+              />
+            </div>
+
+            <div class="form-group full">
+              <label for="summary">Professional summary</label>
+              <textarea
+                id="summary"
+                name="summary"
+                rows="3"
+                placeholder="2–4 lines that summarize your experience, strengths, and career goals."
+              ></textarea>
+            </div>
+
+            <div class="form-group full">
+              <label for="experience">Experience (one role per line)</label>
+              <textarea
+                id="experience"
+                name="experience"
+                rows="5"
+                placeholder="Senior Frontend Engineer, Acme Inc. — 2020–Present&#10;Frontend Engineer, Bright Apps — 2017–2020"
+              ></textarea>
+            </div>
+
+            <div class="form-group full">
+              <label for="experienceHighlights">Experience highlights (one bullet per line)</label>
+              <textarea
+                id="experienceHighlights"
+                name="experienceHighlights"
+                rows="4"
+                placeholder="Led migration from AngularJS to React for core product&#10;Improved page performance, reducing load times by 40%&#10;Mentored 4 junior engineers and interns"
+              ></textarea>
+            </div>
+
+            <div class="form-group full">
+              <label for="education">Education (one entry per line)</label>
+              <textarea
+                id="education"
+                name="education"
+                rows="3"
+                placeholder="B.Sc. Computer Science, University of Somewhere — 2013–2017"
+              ></textarea>
+            </div>
+
+            <div class="form-group full">
+              <label for="skills">Skills (comma-separated)</label>
+              <textarea
+                id="skills"
+                name="skills"
+                rows="2"
+                placeholder="JavaScript, TypeScript, React, Node.js, UI Design, Testing"
+              ></textarea>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel panel-preview">
+          <div class="panel-header">
+            <h2>2. Live Preview</h2>
+            <p>Switch templates and tweak details until it looks perfect.</p>
+          </div>
+          <div class="preview-wrapper">
+            <div id="resume-preview" class="resume resume-classic">
+              <!-- Generated resume output goes here -->
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <p>
+          Built with ♥ for fast, beautiful resumes. Use the
+          <span class="mono">Download / Print PDF</span> button to export.
+        </p>
+      </footer>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+  </html>
+
